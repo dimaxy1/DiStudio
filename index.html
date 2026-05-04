@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DIStudio — Разработка Minecraft плагинов</title>
+<link rel="icon" type="image/jpeg" href="ava.jpg">
+<link rel="apple-touch-icon" href="ava.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Exo+2:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
@@ -78,6 +80,10 @@ section{position:relative;z-index:1;}
 
 /* SERVICES */
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--border);border:1px solid var(--border);}
+.service-card.fill{grid-column:span 1;}
+/* Make доработка + оптимизация fill the whole row by making one of them span 2 */
+.services-grid .service-card:nth-child(3){grid-column:span 1;}
+.services-grid .service-card:nth-child(4){grid-column:span 2;}
 .service-card{background:var(--card);padding:40px 36px;position:relative;overflow:hidden;transition:background .3s;}
 .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--green);transform:scaleX(0);transition:transform .3s;transform-origin:left;}
 .service-card:hover{background:#0f181f;}
@@ -203,21 +209,128 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
 .contact-note{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--text2);padding:12px 16px;background:rgba(0,255,136,.04);border:1px solid rgba(0,255,136,.12);}
 .contact-note-dot{width:6px;height:6px;background:var(--green);flex-shrink:0;animation:blink 1.2s infinite;}
 
+/* BUILDERS */
+.builders-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.builder-card{background:var(--card);border:1px solid var(--border);overflow:hidden;transition:border-color .3s,transform .3s;position:relative;}
+.builder-card:hover{border-color:var(--cyan);transform:translateY(-4px);}
+.builder-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--cyan);transform:scaleX(0);transition:transform .3s;transform-origin:left;z-index:2;}
+.builder-card:hover::before{transform:scaleX(1);}
+.builder-img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:transform .4s;}
+.builder-card:hover .builder-img{transform:scale(1.03);}
+.builder-img-wrap{overflow:hidden;position:relative;}
+.builder-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(8,11,14,.85) 100%);pointer-events:none;}
+.builder-label{position:absolute;bottom:12px;left:16px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--cyan);letter-spacing:2px;text-transform:uppercase;opacity:.9;}
+@media(max-width:600px){.builders-grid{grid-template-columns:1fr;}}
+
 /* UTIL */
 .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 ::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--border2);}::-webkit-scrollbar-thumb:hover{background:var(--green);}
 
-@media(max-width:900px){
-  nav{padding:0 24px;}.nav-links{display:none;}.hero{padding:100px 24px 60px;}.hero-visual{display:none;}
-  .container{padding:0 24px;}.stats{flex-direction:column;}.stat-item{border-right:none;border-bottom:1px solid var(--border);}
-  .services-grid{grid-template-columns:1fr;}.service-card.featured{grid-column:span 1;}
-  .about-layout{grid-template-columns:1fr;gap:48px;}
-  .portfolio-grid{grid-template-columns:1fr;}.portfolio-card:first-child{grid-column:span 1;}
-  .process-steps{flex-direction:column;}.process-steps::before{display:none;}
-  .reviews-grid{grid-template-columns:1fr;}
-  .footer-top{flex-direction:column;}.footer-bottom{flex-direction:column;gap:16px;text-align:center;}
+/* ── TABLET ── */
+@media(max-width:1024px){
+  .hero-visual{width:300px;height:300px;}
+  .services-grid{grid-template-columns:repeat(2,1fr);}
+  .services-grid .service-card:nth-child(4){grid-column:span 1;}
+  .service-card.featured{grid-column:span 2;}
+  .reviews-grid{grid-template-columns:repeat(2,1fr);}
+  .portfolio-grid{grid-template-columns:repeat(2,1fr);}
+  .portfolio-card:first-child{grid-column:span 2;}
 }
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  /* Nav */
+  nav{padding:0 16px;height:56px;}
+  .nav-links{display:none;}
+  .nav-logo{font-size:11px;}
+
+  /* Hero */
+  .hero{padding:80px 16px 48px;min-height:auto;text-align:center;}
+  .hero-content{max-width:100%;}
+  .hero-visual{display:none;}
+  .hero-title{font-size:clamp(18px,6vw,32px);line-height:1.6;}
+  .hero-sub{font-size:15px;margin-bottom:32px;}
+  .hero-btns{flex-direction:column;gap:12px;}
+  .hero-btns .btn{width:100%;justify-content:center;}
+  .hero-badge{font-size:10px;}
+
+  /* Stats */
+  .stats{flex-direction:column;}
+  .stat-item{border-right:none;border-bottom:1px solid var(--border);padding:24px 16px;}
+  .stat-num{font-size:22px;}
+
+  /* Container */
+  .container{padding:0 16px;}
+  .py{padding:56px 0;}
+  .section-title{font-size:clamp(13px,4vw,20px);}
+
+  /* Services */
+  .services-grid{grid-template-columns:1fr;gap:1px;}
+  .service-card{padding:28px 20px;}
+  .service-card.featured{grid-column:span 1;}
+  .services-grid .service-card:nth-child(4){grid-column:span 1;}
+
+  /* About */
+  .about-layout{grid-template-columns:1fr;gap:32px;}
+  .terminal-body{font-size:11px;line-height:2;}
+  .about-badge-row{gap:10px;}
+  .about-badge{font-size:11px;padding:10px 14px;}
+
+  /* Process */
+  .process-steps{flex-direction:column;gap:0;}
+  .process-steps::before{display:none;}
+  .step{padding:24px 16px;border-bottom:1px solid var(--border);}
+  .step:last-child{border-bottom:none;}
+
+  /* Portfolio */
+  .portfolio-grid{grid-template-columns:1fr;}
+  .portfolio-card:first-child{grid-column:span 1;}
+  .portfolio-info{padding:16px;}
+
+  /* Builders */
+  .builders-grid{grid-template-columns:1fr;}
+
+  /* Reviews */
+  .reviews-grid{grid-template-columns:1fr;}
+  .review-card{padding:20px;}
+
+  /* CTA */
+  .cta-section{padding:56px 16px;}
+  .cta-btns{flex-direction:column;align-items:center;}
+  .cta-btns .btn{width:100%;max-width:320px;justify-content:center;}
+
+  /* Footer */
+  footer{padding:32px 16px 24px;}
+  .footer-top{flex-direction:column;gap:32px;}
+  .footer-bottom{flex-direction:column;gap:12px;text-align:center;}
+  .footer-logo{font-size:10px;}
+
+  /* Modal */
+  .modal{margin:0 8px;}
+  .modal-body{padding:20px 16px;}
+  .contact-option{padding:14px 16px;gap:12px;}
+}
+
+/* ── SMALL MOBILE ── */
+@media(max-width:400px){
+  .hero-title{font-size:16px;}
+  .btn{font-size:13px;padding:14px 20px;}
+  .stat-num{font-size:18px;}
+}
+
+/* Burger menu */
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:300;}
+.burger span{display:block;width:22px;height:2px;background:var(--green);transition:all .3s;}
+.burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.burger.open span:nth-child(2){opacity:0;}
+.burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:rgba(8,11,14,.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);z-index:199;flex-direction:column;padding:16px 0;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:var(--text2);text-decoration:none;font-weight:600;font-size:15px;letter-spacing:1px;text-transform:uppercase;padding:14px 24px;border-bottom:1px solid var(--border);transition:color .2s,background .2s;}
+.mobile-menu a:last-child{border-bottom:none;margin:12px 16px 0;background:var(--green);color:#000;text-align:center;font-weight:700;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);}
+.mobile-menu a:hover{color:var(--green);background:rgba(0,255,136,.04);}
+@media(max-width:768px){.burger{display:flex;}}
 </style>
 </head>
 <body>
@@ -230,10 +343,22 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
     <li><a href="#services">Услуги</a></li>
     <li><a href="#about">О нас</a></li>
     <li><a href="#portfolio">Портфолио</a></li>
+    <li><a href="#builders">Билдеры</a></li>
     <li><a href="#reviews">Отзывы</a></li>
     <li><a href="#" class="nav-cta" onclick="openModal();return false;">Заказать</a></li>
   </ul>
+  <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Меню">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" onclick="closeMenu()">Услуги</a>
+  <a href="#about" onclick="closeMenu()">О нас</a>
+  <a href="#portfolio" onclick="closeMenu()">Портфолио</a>
+  <a href="#builders" onclick="closeMenu()">Билдеры</a>
+  <a href="#reviews" onclick="closeMenu()">Отзывы</a>
+  <a href="#" onclick="closeMenu();openModal();return false;">⚡ Заказать</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -264,7 +389,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
     <div class="section-header reveal">
       <span class="section-tag">// наши услуги</span>
       <h2 class="section-title">Что мы делаем</h2>
-      <p class="section-desc">Разработка плагинов и сборок для Minecraft серверов — от небольшой правки до сложной системы</p>
+      <p class="section-desc">Плагины, сборки, постройки и карты для Minecraft серверов — от небольшой правки до полноценного проекта</p>
     </div>
     <div class="services-grid reveal">
       <div class="service-card featured">
@@ -296,6 +421,21 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
         <div class="service-price">от 200 ₽</div>
         <button class="service-link" onclick="openModal()">Заказать →</button>
       </div>
+      <div class="service-card featured">
+        <div class="service-icon">🏗️</div>
+        <h3 class="service-title">Постройки на заказ</h3>
+        <p class="service-desc">Создаём уникальные постройки любой сложности: спавны, арены, хабы, города, замки, острова и целые миры. Работаем в любом стиле — средневековье, фэнтези, sci-fi, современность. Сдаём в формате schematic или готового мира.</p>
+        <div class="service-tags"><span class="tag">Spawn</span><span class="tag">Arena</span><span class="tag">Hub</span><span class="tag">Schematic</span><span class="tag">WorldEdit</span></div>
+        <div class="service-price">от 300 ₽</div>
+        <button class="service-link" onclick="openModal()">Заказать →</button>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🗺️</div>
+        <h3 class="service-title">Карты и миры</h3>
+        <p class="service-desc">Разрабатываем кастомные карты для мини-игр, приключений и выживания. Генерация terrain, ручная доработка, расстановка структур и оформление.</p>
+        <div class="service-price">от 500 ₽</div>
+        <button class="service-link" onclick="openModal()">Заказать →</button>
+      </div>
     </div>
   </div>
 </section>
@@ -319,7 +459,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
             studio.<span class="t-key">setClients</span>(<span class="t-num">150</span>);<br><br>
             studio.<span class="t-key">addSkill</span>(<span class="t-str">"Java"</span>);<br>
             studio.<span class="t-key">addSkill</span>(<span class="t-str">"Spigot API"</span>);<br>
-            studio.<span class="t-key">addSkill</span>(<span class="t-str">"Paper API"</span>);<br><br>
+            studio.<span class="t-key">addSkill</span>(<span class="t-str">"Paper API"</span>);<br>
+            studio.<span class="t-key">addSkill</span>(<span class="t-str">"WorldEdit"</span>);<br>
+            studio.<span class="t-key">addSkill</span>(<span class="t-str">"Building"</span>);<br><br>
             studio.<span class="t-key">start</span>();<span class="t-cursor"></span>
           </div>
         </div>
@@ -328,13 +470,20 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
           <div class="about-badge">✔ Быстрые сроки</div>
           <div class="about-badge">✔ Поддержка 24/7</div>
         </div>
+        <div class="about-avatar-wrap" style="margin-top:24px;display:flex;align-items:center;gap:16px;">
+          <img src="ava.jpg" alt="DIStudio" style="width:64px;height:64px;object-fit:cover;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);border:2px solid rgba(0,255,136,.3);">
+          <div>
+            <div style="font-family:'Press Start 2P',monospace;font-size:9px;color:var(--white);line-height:1.8;">DIStudio</div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green);margin-top:4px;">// основатель студии</div>
+          </div>
+        </div>
       </div>
       <div class="reveal">
         <div class="section-header" style="text-align:left;margin-bottom:32px;">
           <span class="section-tag">// о нас</span>
           <h2 class="section-title">DIStudio — ваш надёжный партнёр</h2>
         </div>
-        <p class="about-desc">Мы — команда разработчиков, которая специализируется на создании плагинов и сборок для Minecraft серверов.</p>
+        <p class="about-desc">Мы — команда разработчиков и билдеров, которая специализируется на создании плагинов, сборок, построек и карт для Minecraft серверов.</p>
         <p class="about-desc">С 2021 года помогаем владельцам серверов воплощать идеи в жизнь — быстро, без лишних слов и с реальным результатом.</p>
         <ul class="about-list">
           <li>Чёткое выполнение технического задания</li>
@@ -343,6 +492,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
           <li>Доступные цены без потери качества</li>
           <li>Помощь с настройкой после сдачи заказа</li>
           <li>Работаем через безопасную сделку</li>
+          <li>Постройки и карты любой сложности и стиля</li>
         </ul>
         <button class="btn btn-primary" onclick="openModal()">Начать сотрудничество</button>
       </div>
@@ -411,6 +561,33 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
   </div>
 </section>
 
+<!-- BUILDERS -->
+<section id="builders" style="background:var(--bg);border-top:1px solid var(--border);">
+  <div class="container py">
+    <div class="section-header reveal">
+      <span class="section-tag">// для билдеров</span>
+      <h2 class="section-title">Работы наших билдеров</h2>
+      <p class="section-desc">Создаём уникальные постройки и оформление для Minecraft серверов</p>
+    </div>
+    <div class="builders-grid reveal">
+      <div class="builder-card">
+        <div class="builder-img-wrap">
+          <img src="1.jpg" alt="Постройка 1" class="builder-img">
+          <div class="builder-img-overlay"></div>
+          <div class="builder-label"></div>
+        </div>
+      </div>
+      <div class="builder-card">
+        <div class="builder-img-wrap">
+          <img src="2.jpg" alt="Постройка 2" class="builder-img">
+          <div class="builder-img-overlay"></div>
+          <div class="builder-label"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- REVIEWS -->
 <section id="reviews">
   <div class="container py">
@@ -460,7 +637,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
       <ul>
         <li><a href="#about">О нас</a></li>
         <li><a href="#portfolio">Портфолио</a></li>
-        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#builders">Билдеры</a></li>
+    <li><a href="#reviews">Отзывы</a></li>
         <li><a href="#" onclick="openModal();return false;">Заказать</a></li>
       </ul>
     </div>
@@ -538,7 +716,17 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
 function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
 function closeModalOutside(e){if(e.target===document.getElementById('modal'))closeModal();}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeMenu();}});
+function toggleMenu(){
+  const b=document.getElementById('burger'),m=document.getElementById('mobileMenu');
+  b.classList.toggle('open');m.classList.toggle('open');
+  document.body.style.overflow=m.classList.contains('open')?'hidden':'';
+}
+function closeMenu(){
+  document.getElementById('burger').classList.remove('open');
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.body.style.overflow='';
+}
 </script>
 </body>
 </html>
