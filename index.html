@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DIStudio — Minecraft Plugin Development</title>
+<title>DIStudio — Разработка Minecraft плагинов</title>
 <link rel="icon" type="image/jpeg" href="ava.jpg">
 <link rel="apple-touch-icon" href="ava.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,12 +28,6 @@ body::after{content:'';position:fixed;inset:0;background-image:url("data:image/s
 @keyframes fadein{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 @keyframes blockpulse{0%,100%{opacity:.4}50%{opacity:1}}
 @keyframes modalin{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-
-/* LANGUAGE SWITCHER */
-.lang-switcher{display:flex;align-items:center;gap:4px;margin-left:20px;}
-.lang-btn{background:none;border:1px solid var(--border2);color:var(--text2);font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;cursor:pointer;letter-spacing:1px;text-transform:uppercase;transition:all .2s;clip-path:polygon(4px 0%,100% 0%,calc(100% - 4px) 100%,0% 100%);}
-.lang-btn:hover{border-color:var(--green);color:var(--green);}
-.lang-btn.active{background:var(--green);color:#000;border-color:var(--green);font-weight:700;}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:68px;background:rgba(8,11,14,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
 .nav-logo{font-family:'Press Start 2P',monospace;font-size:13px;color:var(--green);text-shadow:0 0 24px var(--green),0 0 48px rgba(0,255,136,.3);text-decoration:none;letter-spacing:2px;}
@@ -233,9 +227,6 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
   nav{padding:0 16px;height:56px;}
   .nav-links{display:none;}
   .nav-logo{font-size:11px;}
-  .lang-switcher{margin-left:10px;}
-  .lang-btn{font-size:10px;padding:4px 7px;}
-
   .hero{padding:80px 16px 48px;min-height:auto;text-align:center;}
   .hero-content{max-width:100%;}
   .hero-visual{display:none;}
@@ -244,51 +235,44 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
   .hero-btns{flex-direction:column;gap:12px;}
   .hero-btns .btn{width:100%;justify-content:center;}
   .hero-badge{font-size:10px;}
-
   .stats{flex-direction:column;}
   .stat-item{border-right:none;border-bottom:1px solid var(--border);padding:24px 16px;}
   .stat-num{font-size:22px;}
-
   .container{padding:0 16px;}
   .py{padding:56px 0;}
   .section-title{font-size:clamp(13px,4vw,20px);}
-
   .services-grid{grid-template-columns:1fr;gap:1px;}
   .service-card{padding:28px 20px;}
   .service-card.featured{grid-column:span 1;}
   .services-grid .service-card:nth-child(4){grid-column:span 1;}
-
   .about-layout{grid-template-columns:1fr;gap:32px;}
   .terminal-body{font-size:11px;line-height:2;}
   .about-badge-row{gap:10px;}
   .about-badge{font-size:11px;padding:10px 14px;}
-
   .process-steps{flex-direction:column;gap:0;}
   .process-steps::before{display:none;}
   .step{padding:24px 16px;border-bottom:1px solid var(--border);}
   .step:last-child{border-bottom:none;}
-
   .portfolio-grid{grid-template-columns:1fr;}
   .portfolio-card:first-child{grid-column:span 1;}
   .portfolio-info{padding:16px;}
-
   .builders-grid{grid-template-columns:1fr;}
-
   .reviews-grid{grid-template-columns:1fr;}
   .review-card{padding:20px;}
-
   .cta-section{padding:56px 16px;}
   .cta-btns{flex-direction:column;align-items:center;}
   .cta-btns .btn{width:100%;max-width:320px;justify-content:center;}
-
   footer{padding:32px 16px 24px;}
   .footer-top{flex-direction:column;gap:32px;}
   .footer-bottom{flex-direction:column;gap:12px;text-align:center;}
   .footer-logo{font-size:10px;}
-
   .modal{margin:0 8px;}
   .modal-body{padding:20px 16px;}
   .contact-option{padding:14px 16px;gap:12px;}
+  .lang-switcher{margin-left:10px;}
+  .lang-btn{font-size:10px;padding:4px 7px;}
+  .order-form-wrapper{padding:0;}
+  .order-input,.order-textarea,.order-select{font-size:14px;padding:12px 14px;}
 }
 
 @media(max-width:400px){
@@ -308,7 +292,33 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
 .mobile-menu a:last-child{border-bottom:none;margin:12px 16px 0;background:var(--green);color:#000;text-align:center;font-weight:700;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);}
 .mobile-menu a:hover{color:var(--green);background:rgba(0,255,136,.04);}
 .mobile-lang{display:flex;gap:6px;padding:14px 24px;border-bottom:1px solid var(--border);}
+.nav-right{display:flex;align-items:center;}
+.lang-switcher{display:flex;align-items:center;gap:4px;margin-left:20px;}
+.lang-btn{background:none;border:1px solid var(--border2);color:var(--text2);font-family:'JetBrains Mono',monospace;font-size:11px;padding:5px 10px;cursor:pointer;letter-spacing:1px;text-transform:uppercase;transition:all .2s;clip-path:polygon(4px 0%,100% 0%,calc(100% - 4px) 100%,0% 100%);}
+.lang-btn:hover{border-color:var(--green);color:var(--green);}
+.lang-btn.active{background:var(--green);color:#000;border-color:var(--green);font-weight:700;}
 @media(max-width:768px){.burger{display:flex;}}
+
+.order-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+.order-section-glow{position:absolute;top:30%;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(0,255,136,.06) 0%,transparent 70%);pointer-events:none;}
+.order-form-wrapper{max-width:640px;margin:0 auto;position:relative;z-index:1;}
+.order-form{display:flex;flex-direction:column;gap:20px;}
+.order-field{display:flex;flex-direction:column;gap:8px;}
+.order-label{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green);letter-spacing:2px;text-transform:uppercase;}
+.order-input,.order-textarea,.order-select{background:var(--bg3);border:1px solid var(--border2);color:var(--white);font-family:'Exo 2',sans-serif;font-size:15px;font-weight:400;padding:14px 18px;outline:none;transition:border-color .25s,box-shadow .25s;width:100%;}
+.order-input:focus,.order-textarea:focus,.order-select:focus{border-color:var(--green);box-shadow:0 0 12px rgba(0,255,136,.15);}
+.order-input::placeholder,.order-textarea::placeholder{color:var(--text2);opacity:.7;}
+.order-textarea{min-height:120px;resize:vertical;line-height:1.6;}
+.order-select{cursor:pointer;appearance:none;-webkit-appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b8098' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;}
+.order-select option{background:var(--bg3);color:var(--white);}
+.order-form-btn{margin-top:8px;width:100%;justify-content:center;}
+.order-form-btn:disabled{opacity:.6;cursor:not-allowed;transform:none!important;box-shadow:none!important;}
+.order-msg{font-family:'JetBrains Mono',monospace;font-size:13px;padding:14px 18px;display:none;align-items:center;gap:10px;animation:fadein .3s ease;}
+.order-msg.success{display:flex;color:var(--green);background:rgba(0,255,136,.06);border:1px solid rgba(0,255,136,.2);}
+.order-msg.error{display:flex;color:#ff4d4d;background:rgba(255,77,77,.06);border:1px solid rgba(255,77,77,.2);}
+.order-msg-dot{width:6px;height:6px;flex-shrink:0;animation:blink 1.2s infinite;}
+.order-msg.success .order-msg-dot{background:var(--green);}
+.order-msg.error .order-msg-dot{background:#ff4d4d;}
 </style>
 </head>
 <body>
@@ -319,20 +329,20 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
   <a href="#" class="nav-logo">DI<span>Studio</span></a>
   <div class="nav-right">
     <ul class="nav-links">
-      <li><a href="#services" data-i18n="nav.services"></a></li>
-      <li><a href="#about" data-i18n="nav.about"></a></li>
-      <li><a href="#portfolio" data-i18n="nav.portfolio"></a></li>
-      <li><a href="#builders" data-i18n="nav.builders"></a></li>
-      <li><a href="#reviews" data-i18n="nav.reviews"></a></li>
-      <li><a href="#" class="nav-cta" onclick="openModal();return false;" data-i18n="nav.order"></a></li>
+      <li><a href="#services" data-i18n="nav.services">Услуги</a></li>
+      <li><a href="#about" data-i18n="nav.about">О нас</a></li>
+      <li><a href="#portfolio" data-i18n="nav.portfolio">Портфолио</a></li>
+      <li><a href="#builders" data-i18n="nav.builders">Билдеры</a></li>
+      <li><a href="#reviews" data-i18n="nav.reviews">Отзывы</a></li>
+      <li><a href="#order-form" class="nav-cta" data-i18n="nav.order">Заказать</a></li>
     </ul>
     <div class="lang-switcher">
       <button class="lang-btn" onclick="setLang('en')">EN</button>
       <button class="lang-btn" onclick="setLang('ua')">UA</button>
-      <button class="lang-btn" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn active" onclick="setLang('ru')">RU</button>
     </div>
   </div>
-  <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Menu">
+  <button class="burger" id="burger" onclick="toggleMenu()" aria-label="Меню">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -341,87 +351,88 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
   <div class="mobile-lang">
     <button class="lang-btn" onclick="setLang('en');closeMenu()">EN</button>
     <button class="lang-btn" onclick="setLang('ua');closeMenu()">UA</button>
-    <button class="lang-btn" onclick="setLang('ru');closeMenu()">RU</button>
+    <button class="lang-btn active" onclick="setLang('ru');closeMenu()">RU</button>
   </div>
-  <a href="#services" onclick="closeMenu()" data-i18n="nav.services"></a>
-  <a href="#about" onclick="closeMenu()" data-i18n="nav.about"></a>
-  <a href="#portfolio" onclick="closeMenu()" data-i18n="nav.portfolio"></a>
-  <a href="#builders" onclick="closeMenu()" data-i18n="nav.builders"></a>
-  <a href="#reviews" onclick="closeMenu()" data-i18n="nav.reviews"></a>
-  <a href="#" onclick="closeMenu();openModal();return false;" data-i18n="nav.order_icon"></a>
+  <a href="#services" onclick="closeMenu()" data-i18n="nav.services">Услуги</a>
+  <a href="#about" onclick="closeMenu()" data-i18n="nav.about">О нас</a>
+  <a href="#portfolio" onclick="closeMenu()" data-i18n="nav.portfolio">Портфолио</a>
+  <a href="#builders" onclick="closeMenu()" data-i18n="nav.builders">Билдеры</a>
+  <a href="#reviews" onclick="closeMenu()" data-i18n="nav.reviews">Отзывы</a>
+  <a href="#order-form" onclick="closeMenu()" data-i18n="nav.order">Заказать</a>
 </div>
+
 <section class="hero">
   <div class="hero-glow"></div><div class="hero-glow2"></div>
   <div class="hero-content">
-    <div class="hero-badge"><div class="hero-badge-dot"></div><span data-i18n="hero.badge"></span></div>
-    <h1 class="hero-title"><span class="accent">DI</span>Studio<br><span class="accent2">Minecraft</span><br><span data-i18n="hero.title"></span></h1>
-    <p class="hero-sub" data-i18n="hero.sub"></p>
+    <div class="hero-badge"><div class="hero-badge-dot"></div>Принимаем заказы · 2024</div>
+    <h1 class="hero-title"><span class="accent">DI</span>Studio<br><span class="accent2">Minecraft</span><br>Разработка</h1>
+    <p class="hero-sub">Создаём мощные плагины и сборки для Minecraft серверов. Быстро, надёжно, по делу.</p>
     <div class="hero-btns">
-      <button class="btn btn-primary" onclick="openModal()" data-i18n="hero.btn_order"></button>
-      <a href="#portfolio" class="btn btn-secondary" data-i18n="hero.btn_portfolio"></a>
+      <a href="#order-form" class="btn btn-primary">⚡ Заказать плагин</a>
+      <a href="#portfolio" class="btn btn-secondary">📦 Портфолио</a>
     </div>
   </div>
   <div class="hero-visual" id="heroGrid"></div>
 </section>
 
 <div class="stats">
-  <div class="stat-item"><span class="stat-num">200+</span><span class="stat-label" data-i18n="stats.orders"></span></div>
-  <div class="stat-item"><span class="stat-num">150+</span><span class="stat-label" data-i18n="stats.clients"></span></div>
-  <div class="stat-item"><span class="stat-num">3+</span><span class="stat-label" data-i18n="stats.years"></span></div>
-  <div class="stat-item"><span class="stat-num">1.8+</span><span class="stat-label" data-i18n="stats.versions"></span></div>
+  <div class="stat-item"><span class="stat-num">200+</span><span class="stat-label">Выполненных заказов</span></div>
+  <div class="stat-item"><span class="stat-num">150+</span><span class="stat-label">Довольных клиентов</span></div>
+  <div class="stat-item"><span class="stat-num">3+</span><span class="stat-label">Года опыта</span></div>
+  <div class="stat-item"><span class="stat-num">1.8+</span><span class="stat-label">Версий Minecraft</span></div>
 </div>
 
 <section id="services">
   <div class="container py">
     <div class="section-header reveal">
-      <span class="section-tag" data-i18n="services.tag"></span>
-      <h2 class="section-title" data-i18n="services.title"></h2>
-      <p class="section-desc" data-i18n="services.desc"></p>
+      <span class="section-tag">наши услуги</span>
+      <h2 class="section-title">Что мы делаем</h2>
+      <p class="section-desc">Плагины, сборки, постройки и карты для Minecraft серверов — от небольшой правки до полноценного проекта</p>
     </div>
     <div class="services-grid reveal">
       <div class="service-card featured">
         <div class="service-icon">⚡</div>
-        <h3 class="service-title" data-i18n="s1.title"></h3>
-        <p class="service-desc" data-i18n="s1.desc"></p>
+        <h3 class="service-title">Плагин на заказ</h3>
+        <p class="service-desc">Разрабатываем плагины любой сложности под ваши требования. Оптимизированный код, удобная конфигурация, поддержка версий от 1.8 до 1.21. Реализуем любые механики: мини-игры, экономика, кланы, RPG-системы и многое другое.</p>
         <div class="service-tags"><span class="tag">Java</span><span class="tag">Spigot / Paper</span><span class="tag">Bukkit</span><span class="tag">1.8 – 1.21</span></div>
-        <div class="service-price" data-i18n="s1.price"></div>
-        <button class="service-link" onclick="openModal()" data-i18n="service.order"></button>
+        <div class="service-price">от 200 ₽</div>
+        <a href="#order-form" class="service-link">Заказать →</a>
       </div>
       <div class="service-card">
         <div class="service-icon">📦</div>
-        <h3 class="service-title" data-i18n="s2.title"></h3>
-        <p class="service-desc" data-i18n="s2.desc"></p>
-        <div class="service-price" data-i18n="s2.price"></div>
-        <button class="service-link" onclick="openModal()" data-i18n="service.order"></button>
+        <h3 class="service-title">Сборка сервера</h3>
+        <p class="service-desc">Настройка сервера с нуля: выбор ядра, плагины, оптимизация, античит и конфигурация под ваш режим.</p>
+        <div class="service-price">от 500 ₽</div>
+        <a href="#order-form" class="service-link">Заказать →</a>
       </div>
       <div class="service-card">
         <div class="service-icon">🔧</div>
-        <h3 class="service-title" data-i18n="s3.title"></h3>
-        <p class="service-desc" data-i18n="s3.desc"></p>
-        <div class="service-price" data-i18n="s3.price"></div>
-        <button class="service-link" onclick="openModal()" data-i18n="service.order"></button>
+        <h3 class="service-title">Доработка плагина</h3>
+        <p class="service-desc">Исправим баги, добавим функции, обновим под новую версию — работаем с любым чужим кодом.</p>
+        <div class="service-price">от 100 ₽</div>
+        <a href="#order-form" class="service-link">Заказать →</a>
       </div>
       <div class="service-card">
         <div class="service-icon">🛡️</div>
-        <h3 class="service-title" data-i18n="s4.title"></h3>
-        <p class="service-desc" data-i18n="s4.desc"></p>
-        <div class="service-price" data-i18n="s4.price"></div>
-        <button class="service-link" onclick="openModal()" data-i18n="service.order"></button>
+        <h3 class="service-title">Оптимизация сервера</h3>
+        <p class="service-desc">Анализ TPS и лагов, тонкая настройка конфигов, оптимизация плагинов и ядра под максимальный онлайн.</p>
+        <div class="service-price">от 200 ₽</div>
+        <a href="#order-form" class="service-link">Заказать →</a>
       </div>
       <div class="service-card featured">
         <div class="service-icon">🏗️</div>
-        <h3 class="service-title" data-i18n="s5.title"></h3>
-        <p class="service-desc" data-i18n="s5.desc"></p>
+        <h3 class="service-title">Постройки на заказ</h3>
+        <p class="service-desc">Создаём уникальные постройки любой сложности: спавны, арены, хабы, города, замки, острова и целые миры. Работаем в любом стиле — средневековье, фэнтези, sci-fi, современность. Сдаём в формате schematic или готового мира.</p>
         <div class="service-tags"><span class="tag">Spawn</span><span class="tag">Arena</span><span class="tag">Hub</span><span class="tag">Schematic</span><span class="tag">WorldEdit</span></div>
-        <div class="service-price" data-i18n="s5.price"></div>
-        <button class="service-link" onclick="openModal()" data-i18n="service.order"></button>
+        <div class="service-price">от 300 ₽</div>
+        <a href="#order-form" class="service-link">Заказать →</a>
       </div>
       <div class="service-card">
         <div class="service-icon">🗺️</div>
-        <h3 class="service-title" data-i18n="s6.title"></h3>
-        <p class="service-desc" data-i18n="s6.desc"></p>
-        <div class="service-price" data-i18n="s6.price"></div>
-        <button class="service-link" onclick="openModal()" data-i18n="service.order"></button>
+        <h3 class="service-title">Карты и миры</h3>
+        <p class="service-desc">Разрабатываем кастомные карты для мини-игр, приключений и выживания. Генерация terrain, ручная доработка, расстановка структур и оформление.</p>
+        <div class="service-price">от 500 ₽</div>
+        <a href="#order-form" class="service-link">Заказать →</a>
       </div>
     </div>
   </div>
@@ -437,7 +448,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
             <span class="terminal-title">DIStudio.java</span>
           </div>
           <div class="terminal-body">
-            <span class="t-comment">// <span data-i18n="terminal.comment"></span></span><br>
+            <span class="t-comment">// О студии</span><br>
             <span class="t-key">Studio</span> studio = <span class="t-key">new</span> Studio(<br>
             &nbsp;&nbsp;<span class="t-str">"DIStudio"</span><br>);<br><br>
             studio.<span class="t-key">setFounded</span>(<span class="t-num">2021</span>);<br>
@@ -452,35 +463,35 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
           </div>
         </div>
         <div class="about-badge-row">
-          <div class="about-badge">✔ <span data-i18n="about.badge1"></span></div>
-          <div class="about-badge">✔ <span data-i18n="about.badge2"></span></div>
-          <div class="about-badge">✔ <span data-i18n="about.badge3"></span></div>
+          <div class="about-badge">✔ Гарантия качества</div>
+          <div class="about-badge">✔ Быстрые сроки</div>
+          <div class="about-badge">✔ Поддержка 24/7</div>
         </div>
-        <div class="about-avatar-wrap" style="margin-top:24px;display:flex;align-items:center;gap:16px;">
+        <div style="margin-top:24px;display:flex;align-items:center;gap:16px;">
           <img src="ava.jpg" alt="DIStudio" style="width:64px;height:64px;object-fit:cover;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);border:2px solid rgba(0,255,136,.3);">
           <div>
             <div style="font-family:'Press Start 2P',monospace;font-size:9px;color:var(--white);line-height:1.8;">DIStudio</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green);margin-top:4px;">// <span data-i18n="about.founder"></span></div>
+            <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green);margin-top:4px;">основатель студии</div>
           </div>
         </div>
       </div>
       <div class="reveal">
         <div class="section-header" style="text-align:left;margin-bottom:32px;">
-          <span class="section-tag" data-i18n="about.tag"></span>
-          <h2 class="section-title" data-i18n="about.title"></h2>
+          <span class="section-tag">о нас</span>
+          <h2 class="section-title">DIStudio — ваш надёжный партнёр</h2>
         </div>
-        <p class="about-desc" data-i18n="about.desc1"></p>
-        <p class="about-desc" data-i18n="about.desc2"></p>
+        <p class="about-desc">Мы — команда разработчиков и билдеров, которая специализируется на создании плагинов, сборок, построек и карт для Minecraft серверов.</p>
+        <p class="about-desc">С 2021 года помогаем владельцам серверов воплощать идеи в жизнь — быстро, без лишних слов и с реальным результатом.</p>
         <ul class="about-list">
-          <li data-i18n="about.li1"></li>
-          <li data-i18n="about.li2"></li>
-          <li data-i18n="about.li3"></li>
-          <li data-i18n="about.li4"></li>
-          <li data-i18n="about.li5"></li>
-          <li data-i18n="about.li6"></li>
-          <li data-i18n="about.li7"></li>
+          <li>Чёткое выполнение технического задания</li>
+          <li>Оптимизированный и стабильный код</li>
+          <li>Поддержка всех актуальных версий Minecraft</li>
+          <li>Доступные цены без потери качества</li>
+          <li>Помощь с настройкой после сдачи заказа</li>
+          <li>Работаем через безопасную сделку</li>
+          <li>Постройки и карты любой сложности и стиля</li>
         </ul>
-        <button class="btn btn-primary" onclick="openModal()" data-i18n="about.cta"></button>
+        <a href="#order-form" class="btn btn-primary">Начать сотрудничество</a>
       </div>
     </div>
   </div>
@@ -489,14 +500,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
 <section>
   <div class="container py">
     <div class="section-header reveal">
-      <span class="section-tag" data-i18n="process.tag"></span>
-      <h2 class="section-title" data-i18n="process.title"></h2>
+      <span class="section-tag">как мы работаем</span>
+      <h2 class="section-title">Процесс работы</h2>
     </div>
     <div class="process-steps reveal">
-      <div class="step"><div class="step-num">01</div><h3 class="step-title" data-i18n="step1.title"></h3><p class="step-desc" data-i18n="step1.desc"></p></div>
-      <div class="step"><div class="step-num">02</div><h3 class="step-title" data-i18n="step2.title"></h3><p class="step-desc" data-i18n="step2.desc"></p></div>
-      <div class="step"><div class="step-num">03</div><h3 class="step-title" data-i18n="step3.title"></h3><p class="step-desc" data-i18n="step3.desc"></p></div>
-      <div class="step"><div class="step-num">04</div><h3 class="step-title" data-i18n="step4.title"></h3><p class="step-desc" data-i18n="step4.desc"></p></div>
+      <div class="step"><div class="step-num">01</div><h3 class="step-title">Обсуждение</h3><p class="step-desc">Пишете нам в Discord или Telegram, описываете идею. Уточняем детали и составляем ТЗ.</p></div>
+      <div class="step"><div class="step-num">02</div><h3 class="step-title">Цена и сроки</h3><p class="step-desc">Называем стоимость и дату сдачи. Договариваемся об оплате — аванс или постоплата.</p></div>
+      <div class="step"><div class="step-num">03</div><h3 class="step-title">Разработка</h3><p class="step-desc">Пишем плагин по ТЗ. Держим вас в курсе, показываем промежуточный результат.</p></div>
+      <div class="step"><div class="step-num">04</div><h3 class="step-title">Сдача</h3><p class="step-desc">Передаём готовый продукт, помогаем с установкой и настройкой. Правки — бесплатно.</p></div>
     </div>
   </div>
 </section>
@@ -504,40 +515,40 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
 <section id="portfolio" style="background:var(--bg2);border-top:1px solid var(--border);">
   <div class="container py">
     <div class="section-header reveal">
-      <span class="section-tag" data-i18n="portfolio.tag"></span>
-      <h2 class="section-title" data-i18n="portfolio.title"></h2>
-      <p class="section-desc" data-i18n="portfolio.desc"></p>
+      <span class="section-tag">наши работы</span>
+      <h2 class="section-title">Портфолио</h2>
+      <p class="section-desc">Примеры плагинов, которые мы реализовали для клиентов</p>
     </div>
     <div class="portfolio-grid reveal">
       <div class="portfolio-card">
         <div class="portfolio-img" style="background:linear-gradient(135deg,#0c1a14,#081510);"><div style="font-family:'Press Start 2P',monospace;font-size:40px;color:var(--green);text-shadow:0 0 40px var(--green);opacity:.6;">⚔</div></div>
         <div class="portfolio-info">
-          <div class="portfolio-name" data-i18n="p1.name"></div>
-          <p class="portfolio-desc" data-i18n="p1.desc"></p>
-          <div style="margin-top:12px;display:flex;gap:8px;"><span class="tag" data-i18n="p1.t1"></span><span class="tag">PvP</span><span class="tag">1.20</span></div>
+          <div class="portfolio-name">Система кланов и войн</div>
+          <p class="portfolio-desc">Полноценная клановая система с территориями, войнами, налогами и рейтингом. Paper 1.20.4</p>
+          <div style="margin-top:12px;display:flex;gap:8px;"><span class="tag">Кланы</span><span class="tag">PvP</span><span class="tag">1.20</span></div>
         </div>
       </div>
       <div class="portfolio-card">
         <div class="portfolio-img" style="background:linear-gradient(135deg,#0c0f1a,#080c15);"><div style="font-family:'Press Start 2P',monospace;font-size:40px;color:var(--cyan);text-shadow:0 0 40px var(--cyan);opacity:.6;">🏪</div></div>
         <div class="portfolio-info">
-          <div class="portfolio-name" data-i18n="p2.name"></div>
-          <p class="portfolio-desc" data-i18n="p2.desc"></p>
-          <div style="margin-top:12px;display:flex;gap:8px;"><span class="tag" data-i18n="p2.t1"></span><span class="tag">GUI</span></div>
+          <div class="portfolio-name">Аукцион и экономика</div>
+          <p class="portfolio-desc">Игровая экономика с аукционом, магазином, банком и налоговой системой.</p>
+          <div style="margin-top:12px;display:flex;gap:8px;"><span class="tag">Экономика</span><span class="tag">GUI</span></div>
         </div>
       </div>
       <div class="portfolio-card">
         <div class="portfolio-img" style="background:linear-gradient(135deg,#1a0c0c,#150808);"><div style="font-family:'Press Start 2P',monospace;font-size:40px;color:var(--amber);text-shadow:0 0 40px var(--amber);opacity:.6;">🏆</div></div>
         <div class="portfolio-info">
-          <div class="portfolio-name" data-i18n="p3.name"></div>
-          <p class="portfolio-desc" data-i18n="p3.desc"></p>
+          <div class="portfolio-name">BattlePass система</div>
+          <p class="portfolio-desc">Сезонный боевой пропуск с заданиями, наградами и красивым GUI интерфейсом.</p>
           <div style="margin-top:12px;display:flex;gap:8px;"><span class="tag">BattlePass</span><span class="tag">Quests</span></div>
         </div>
       </div>
       <div class="portfolio-card">
         <div class="portfolio-img" style="background:linear-gradient(135deg,#0a0c1a,#060815);"><div style="font-family:'Press Start 2P',monospace;font-size:40px;color:#9d5cff;text-shadow:0 0 40px #9d5cff;opacity:.6;">🌀</div></div>
         <div class="portfolio-info">
-          <div class="portfolio-name" data-i18n="p4.name"></div>
-          <p class="portfolio-desc" data-i18n="p4.desc"></p>
+          <div class="portfolio-name">RPG-способности</div>
+          <p class="portfolio-desc">Система классов и умений с анимациями частиц, кулдаунами и балансом для PvP.</p>
           <div style="margin-top:12px;display:flex;gap:8px;"><span class="tag">RPG</span><span class="tag">Skills</span><span class="tag">Particles</span></div>
         </div>
       </div>
@@ -548,21 +559,21 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
 <section id="builders" style="background:var(--bg);border-top:1px solid var(--border);">
   <div class="container py">
     <div class="section-header reveal">
-      <span class="section-tag" data-i18n="builders.tag"></span>
-      <h2 class="section-title" data-i18n="builders.title"></h2>
-      <p class="section-desc" data-i18n="builders.desc"></p>
+      <span class="section-tag">для билдеров</span>
+      <h2 class="section-title">Работы наших билдеров</h2>
+      <p class="section-desc">Создаём уникальные постройки и оформление для Minecraft серверов</p>
     </div>
     <div class="builders-grid reveal">
       <div class="builder-card">
         <div class="builder-img-wrap">
-          <img src="1.jpg" alt="Build 1" class="builder-img">
+          <img src="1.jpg" alt="Постройка 1" class="builder-img">
           <div class="builder-img-overlay"></div>
           <div class="builder-label"></div>
         </div>
       </div>
       <div class="builder-card">
         <div class="builder-img-wrap">
-          <img src="2.jpg" alt="Build 2" class="builder-img">
+          <img src="2.jpg" alt="Постройка 2" class="builder-img">
           <div class="builder-img-overlay"></div>
           <div class="builder-label"></div>
         </div>
@@ -574,26 +585,68 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
 <section id="reviews">
   <div class="container py">
     <div class="section-header reveal">
-      <span class="section-tag" data-i18n="reviews.tag"></span>
-      <h2 class="section-title" data-i18n="reviews.title"></h2>
+      <span class="section-tag">отзывы</span>
+      <h2 class="section-title">Что говорят клиенты</h2>
     </div>
     <div class="reviews-grid reveal">
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text" data-i18n="r1.text"></p><div class="review-author"><div class="review-avatar">DK</div><div><div class="review-name">DarkKnight</div><div class="review-role" data-i18n="r1.role"></div></div></div></div>
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text" data-i18n="r2.text"></p><div class="review-author"><div class="review-avatar">MC</div><div><div class="review-name">MegaCraft</div><div class="review-role" data-i18n="r2.role"></div></div></div></div>
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text" data-i18n="r3.text"></p><div class="review-author"><div class="review-avatar">SR</div><div><div class="review-name">SkyRealms</div><div class="review-role" data-i18n="r3.role"></div></div></div></div>
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text" data-i18n="r4.text"></p><div class="review-author"><div class="review-avatar">PL</div><div><div class="review-name">PlayLand</div><div class="review-role" data-i18n="r4.role"></div></div></div></div>
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text" data-i18n="r5.text"></p><div class="review-author"><div class="review-avatar">NX</div><div><div class="review-name">NexusPlay</div><div class="review-role" data-i18n="r5.role"></div></div></div></div>
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text" data-i18n="r6.text"></p><div class="review-author"><div class="review-avatar">XZ</div><div><div class="review-name">xStarZ</div><div class="review-role" data-i18n="r6.role"></div></div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Заказывал плагин кланов — сделали быстро, всё работает без нареканий. Общались вежливо, объясняли каждый шаг. Буду обращаться ещё!</p><div class="review-author"><div class="review-avatar">DK</div><div><div class="review-name">DarkKnight</div><div class="review-role">Владелец Survival-сервера</div></div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Просил доработать чужой плагин — разобрались в чужом коде и добавили всё что нужно. Быстро и недорого. Буду постоянным клиентом.</p><div class="review-author"><div class="review-avatar">MC</div><div><div class="review-name">MegaCraft</div><div class="review-role">Разработчик сервера</div></div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Заказывал BattlePass плагин — получил намного больше чем ожидал. GUI просто огонь, игроки в восторге. Спасибо DIStudio!</p><div class="review-author"><div class="review-avatar">SR</div><div><div class="review-name">SkyRealms</div><div class="review-role">Основатель SkyBlock сети</div></div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Ребята сделали мне экономическую систему с нуля. Всё задокументировано, config понятный. Поддержка после сдачи — тоже на уровне!</p><div class="review-author"><div class="review-avatar">PL</div><div><div class="review-name">PlayLand</div><div class="review-role">Технический директор</div></div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Сборку сервера подняли за два дня — всё оптимизировано, TPS стабильный. Цена очень адекватная за такое качество.</p><div class="review-author"><div class="review-avatar">NX</div><div><div class="review-name">NexusPlay</div><div class="review-role">Администратор HiPvP</div></div></div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">Уже третий заказ в DIStudio. Каждый раз всё чётко, в срок, без сюрпризов. Это именно те люди, которым можно доверять свой сервер.</p><div class="review-author"><div class="review-avatar">XZ</div><div><div class="review-name">xStarZ</div><div class="review-role">Постоянный клиент</div></div></div></div>
     </div>
   </div>
 </section>
 
 <section id="contact" class="cta-section">
   <div class="cta-glow"></div>
-  <h2 class="cta-title" data-i18n="cta.title"></h2>
-  <p class="cta-sub" data-i18n="cta.sub"></p>
+  <h2 class="cta-title">Готовы усилить<br>ваш сервер?</h2>
+  <p class="cta-sub">Оставьте заявку ниже — рассчитаем цену бесплатно.</p>
   <div class="cta-btns">
-    <button class="btn btn-primary" onclick="openModal()" data-i18n="cta.btn"></button>
+    <a href="#order-form" class="btn btn-primary">⚡ Оформить заказ</a>
+  </div>
+</section>
+
+<section id="order-form" class="order-section">
+  <div class="container py">
+    <div class="section-header reveal">
+      <span class="section-tag" data-i18n="order.tag">оставить заявку</span>
+      <h2 class="section-title" data-i18n="order.title">Оформить заказ</h2>
+      <p class="section-desc" data-i18n="order.desc">Заполните форму ниже и мы свяжемся с вами в ближайшее время</p>
+    </div>
+    <div class="order-form-wrapper reveal">
+      <div class="order-section-glow"></div>
+      <form class="order-form" id="orderForm" onsubmit="submitOrder(event)">
+        <div class="order-field">
+          <label class="order-label" data-i18n="order.label_name">Имя</label>
+          <input type="text" class="order-input" id="orderName" required data-i18n-placeholder="order.ph_name" placeholder="Ваше имя">
+        </div>
+        <div class="order-field">
+          <label class="order-label" data-i18n="order.label_service">Услуга</label>
+          <select class="order-select" id="orderService" required>
+            <option value="" disabled selected data-i18n="order.select_default">Выберите услугу</option>
+            <option value="Плагин на заказ" data-i18n="order.opt_plugin">Плагин на заказ</option>
+            <option value="Сборка сервера" data-i18n="order.opt_server">Сборка сервера</option>
+            <option value="Доработка плагина" data-i18n="order.opt_fix">Доработка плагина</option>
+            <option value="Оптимизация сервера" data-i18n="order.opt_optimize">Оптимизация сервера</option>
+            <option value="Постройки на заказ" data-i18n="order.opt_building">Постройки на заказ</option>
+            <option value="Карты и миры" data-i18n="order.opt_maps">Карты и миры</option>
+            <option value="Другое" data-i18n="order.opt_other">Другое</option>
+          </select>
+        </div>
+        <div class="order-field">
+          <label class="order-label" data-i18n="order.label_desc">Описание проекта</label>
+          <textarea class="order-textarea" id="orderDesc" required data-i18n-placeholder="order.ph_desc" placeholder="Опишите ваш проект"></textarea>
+        </div>
+        <div class="order-field">
+          <label class="order-label" data-i18n="order.label_contact">Контакт</label>
+          <input type="text" class="order-input" id="orderContact" required data-i18n-placeholder="order.ph_contact" placeholder="Ваш Telegram или Discord">
+        </div>
+        <div id="orderMsg" class="order-msg"><div class="order-msg-dot"></div><span id="orderMsgText"></span></div>
+        <button type="submit" class="btn btn-primary order-form-btn" id="orderBtn" data-i18n="order.submit">Отправить заказ</button>
+      </form>
+    </div>
   </div>
 </section>
 
@@ -601,31 +654,31 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
   <div class="footer-top">
     <div>
       <a href="#" class="footer-logo">DI<span>Studio</span></a>
-      <p class="footer-tagline" data-i18n="footer.tagline"></p>
+      <p class="footer-tagline">Профессиональная разработка Minecraft плагинов и сборок с 2021 года.</p>
     </div>
     <div class="footer-links-group">
-      <h4 data-i18n="footer.services"></h4>
+      <h4>Услуги</h4>
       <ul>
-        <li><a href="#services" data-i18n="s1.title"></a></li>
-        <li><a href="#services" data-i18n="s2.title"></a></li>
-        <li><a href="#services" data-i18n="s3.title"></a></li>
-        <li><a href="#services" data-i18n="s4.title"></a></li>
+        <li><a href="#services">Плагины на заказ</a></li>
+        <li><a href="#services">Сборки серверов</a></li>
+        <li><a href="#services">Доработка плагинов</a></li>
+        <li><a href="#services">Оптимизация</a></li>
       </ul>
     </div>
     <div class="footer-links-group">
-      <h4 data-i18n="footer.studio"></h4>
+      <h4>Студия</h4>
       <ul>
-        <li><a href="#about" data-i18n="nav.about"></a></li>
-        <li><a href="#portfolio" data-i18n="nav.portfolio"></a></li>
-        <li><a href="#builders" data-i18n="nav.builders"></a></li>
-        <li><a href="#reviews" data-i18n="nav.reviews"></a></li>
-        <li><a href="#" onclick="openModal();return false;" data-i18n="nav.order"></a></li>
+        <li><a href="#about">О нас</a></li>
+        <li><a href="#portfolio">Портфолио</a></li>
+        <li><a href="#builders">Билдеры</a></li>
+        <li><a href="#reviews">Отзывы</a></li>
+        <li><a href="#order-form">Заказать</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-links-group" style="margin-bottom:20px;"><h4 data-i18n="footer.socials"></h4></div>
+      <div class="footer-links-group" style="margin-bottom:20px;"><h4>Мы в соцсетях</h4></div>
       <div class="footer-socials">
-        <a href="https://discord.com/users/dimaxy" class="social-btn ds" target="_blank" title="Discord">
+        <a href="https://discord.gg/distudio" class="social-btn ds" target="_blank" title="Discord">
           <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
         </a>
         <a href="https://t.me/DIStudi0" class="social-btn tg" target="_blank" title="Telegram">
@@ -635,248 +688,16 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:48px 48p
     </div>
   </div>
   <div class="footer-bottom">
-    <p class="footer-copy" data-i18n="footer.copy"></p>
-    <p class="footer-copy" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green);">// made with ❤ for Minecraft</p>
+    <p class="footer-copy">© 2024 DIStudio. Все права защищены.</p>
+    <p class="footer-copy" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--green);">made with ❤ for Minecraft</p>
   </div>
 </footer>
 
-<div class="modal-overlay" id="modal" onclick="closeModalOutside(event)">
-  <div class="modal">
-    <div class="modal-header">
-      <h3 class="modal-title" data-i18n="modal.title"></h3>
-      <button class="modal-close" onclick="closeModal()">✕</button>
-    </div>
-    <div class="modal-body">
-      <p class="modal-desc" data-i18n="modal.desc"></p>
-      <div class="contact-options">
-        <a href="https://discord.com/users/dimaxy" target="_blank" class="contact-option contact-discord">
-          <div class="co-icon">
-            <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/></svg>
-          </div>
-          <div class="co-info">
-            <div class="co-name">Discord</div>
-            <div class="co-hint" data-i18n="modal.discord_hint"></div>
-          </div>
-          <div class="co-arrow">→</div>
-        </a>
-        <a href="https://t.me/DIStudi0" target="_blank" class="contact-option contact-telegram">
-          <div class="co-icon">
-            <svg viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-          </div>
-          <div class="co-info">
-            <div class="co-name">Telegram</div>
-            <div class="co-hint" data-i18n="modal.telegram_hint"></div>
-          </div>
-          <div class="co-arrow">→</div>
-        </a>
-      </div>
-      <div class="contact-note">
-        <div class="contact-note-dot"></div>
-        <span data-i18n="modal.note"></span>
-      </div>
-    </div>
-  </div>
-</div>
-
 <script>
-const i18n = {
-  en: {
-    "nav.services":"Services","nav.about":"About","nav.portfolio":"Portfolio",
-    "nav.builders":"Builders","nav.reviews":"Reviews","nav.order":"Order",
-    "nav.order_icon":"⚡ Order",
-    "hero.badge":"Taking orders · 2024",
-    "hero.title":"Development","hero.sub":"We create powerful plugins and server builds for Minecraft. Fast, reliable, and straight to the point.",
-    "hero.btn_order":"⚡ Order a Plugin","hero.btn_portfolio":"📦 Portfolio",
-    "stats.orders":"Completed Orders","stats.clients":"Happy Clients",
-    "stats.years":"Years of Experience","stats.versions":"Minecraft Versions",
-    "services.tag":"","services.title":"What We Do",
-    "services.desc":"Plugins, builds, constructions and maps for Minecraft servers — from a small fix to a full project",
-    "service.order":"Order →",
-    "s1.title":"Custom Plugin","s1.desc":"We develop plugins of any complexity to your requirements. Optimized code, easy configuration, support for versions from 1.8 to 1.21. We implement any mechanics: mini-games, economy, clans, RPG systems and much more.","s1.price":"from $2",
-    "s2.title":"Server Build","s2.desc":"Server setup from scratch: core selection, plugins, optimization, anti-cheat and configuration for your game mode.","s2.price":"from $5",
-    "s3.title":"Plugin Upgrade","s3.desc":"We fix bugs, add features, update to a new version — we work with any third-party code.","s3.price":"from $1",
-    "s4.title":"Server Optimization","s4.desc":"TPS and lag analysis, fine-tuning of configs, plugin and core optimization for maximum online capacity.","s4.price":"from $2",
-    "s5.title":"Custom Builds","s5.desc":"We create unique builds of any complexity: spawns, arenas, hubs, cities, castles, islands and entire worlds. We work in any style — medieval, fantasy, sci-fi, modern. Delivered as schematic or ready world.","s5.price":"from $3",
-    "s6.title":"Maps & Worlds","s6.desc":"We develop custom maps for mini-games, adventures and survival. Terrain generation, manual refinement, structure placement and decoration.","s6.price":"from $5",
-    "terminal.comment":"About the studio",
-    "about.badge1":"Quality Guarantee","about.badge2":"Fast Delivery","about.badge3":"24/7 Support",
-    "about.founder":"studio founder",
-    "about.tag":"","about.title":"DIStudio — Your Reliable Partner",
-    "about.desc1":"We are a team of developers and builders specializing in creating plugins, builds, constructions and maps for Minecraft servers.",
-    "about.desc2":"Since 2021, we have been helping server owners bring their ideas to life — quickly, without extra words and with real results.",
-    "about.li1":"Clear fulfillment of technical specifications",
-    "about.li2":"Optimized and stable code",
-    "about.li3":"Support for all current Minecraft versions",
-    "about.li4":"Affordable prices without loss of quality",
-    "about.li5":"Help with setup after order delivery",
-    "about.li6":"We work through secure deals",
-    "about.li7":"Builds and maps of any complexity and style",
-    "about.cta":"Start Cooperation",
-    "process.tag":"","process.title":"Work Process",
-    "step1.title":"Discussion","step1.desc":"Write to us in Discord or Telegram, describe your idea. We clarify the details and draw up a specification.",
-    "step2.title":"Price & Timeline","step2.desc":"We name the cost and delivery date. We agree on payment — advance or post-payment.",
-    "step3.title":"Development","step3.desc":"We write the plugin according to spec. We keep you informed and show intermediate results.",
-    "step4.title":"Delivery","step4.desc":"We hand over the finished product, help with installation and configuration. Revisions are free.",
-    "portfolio.tag":"","portfolio.title":"Portfolio","portfolio.desc":"Examples of plugins we have implemented for clients",
-    "p1.name":"Clan & War System","p1.desc":"A full-featured clan system with territories, wars, taxes and rankings. Paper 1.20.4","p1.t1":"Clans",
-    "p2.name":"Auction & Economy","p2.desc":"Game economy with auction, shop, bank and tax system.","p2.t1":"Economy",
-    "p3.name":"BattlePass System","p3.desc":"Seasonal battle pass with quests, rewards and a beautiful GUI interface.",
-    "p4.name":"RPG Abilities","p4.desc":"Class and skill system with particle animations, cooldowns and balance for PvP.",
-    "builders.tag":"","builders.title":"Our Builders' Work","builders.desc":"We create unique constructions and decoration for Minecraft servers",
-    "reviews.tag":"","reviews.title":"What Clients Say",
-    "r1.text":"Ordered a clan plugin — it was done quickly, everything works flawlessly. Communication was polite, every step explained. Will order again!","r1.role":"Survival Server Owner",
-    "r2.text":"Asked to upgrade a third-party plugin — they dug into the code and added everything needed. Fast and affordable. Will be a regular client.","r2.role":"Server Developer",
-    "r3.text":"Ordered a BattlePass plugin — got much more than expected. The GUI is fire, players are thrilled. Thank you DIStudio!","r3.role":"SkyBlock Network Founder",
-    "r4.text":"The team built an economy system from scratch. Everything is documented, the config is clear. Post-delivery support is also top notch!","r4.role":"Technical Director",
-    "r5.text":"Server build was done in two days — everything optimized, TPS is stable. Very fair price for such quality.","r5.role":"HiPvP Administrator",
-    "r6.text":"This is my third order with DIStudio. Every time it's clear, on time, no surprises. These are exactly the people you can trust your server to.","r6.role":"Regular Client",
-    "cta.title":"Ready to power up\nyour server?","cta.sub":"Write to us on Discord or Telegram — price estimate is free.","cta.btn":"⚡ Contact Us",
-    "footer.tagline":"Professional Minecraft plugin development and server builds since 2021.",
-    "footer.services":"Services","footer.studio":"Studio","footer.socials":"Find Us",
-    "footer.copy":"© 2024 DIStudio. All rights reserved.",
-    "modal.title":"Contact Us","modal.desc":"Choose a convenient way to contact us — we will reply within an hour and discuss all the details of your order.",
-    "modal.discord_hint":"Message DIStudio server","modal.telegram_hint":"Write on Telegram",
-    "modal.note":"Usually we reply within 1 hour"
-  },
-  ua: {
-    "nav.services":"Послуги","nav.about":"Про нас","nav.portfolio":"Портфоліо",
-    "nav.builders":"Білдери","nav.reviews":"Відгуки","nav.order":"Замовити",
-    "nav.order_icon":"⚡ Замовити",
-    "hero.badge":"Приймаємо замовлення · 2024",
-    "hero.title":"Розробка","hero.sub":"Створюємо потужні плагіни та збірки для Minecraft серверів. Швидко, надійно, по справі.",
-    "hero.btn_order":"⚡ Замовити плагін","hero.btn_portfolio":"📦 Портфоліо",
-    "stats.orders":"Виконаних замовлень","stats.clients":"Задоволених клієнтів",
-    "stats.years":"Роки досвіду","stats.versions":"Версій Minecraft",
-    "services.tag":"","services.title":"Що ми робимо",
-    "services.desc":"Плагіни, збірки, будівлі та карти для Minecraft серверів — від невеликого виправлення до повноцінного проєкту",
-    "service.order":"Замовити →",
-    "s1.title":"Плагін на замовлення","s1.desc":"Розробляємо плагіни будь-якої складності під ваші вимоги. Оптимізований код, зручна конфігурація, підтримка версій від 1.8 до 1.21. Реалізуємо будь-які механіки: міні-ігри, економіка, клани, RPG-системи та багато іншого.","s1.price":"від 80 грн",
-    "s2.title":"Збірка сервера","s2.desc":"Налаштування сервера з нуля: вибір ядра, плагіни, оптимізація, античіт та конфігурація під ваш режим.","s2.price":"від 200 грн",
-    "s3.title":"Доопрацювання плагіна","s3.desc":"Виправимо баги, додамо функції, оновимо під нову версію — працюємо з будь-яким чужим кодом.","s3.price":"від 40 грн",
-    "s4.title":"Оптимізація сервера","s4.desc":"Аналіз TPS та лагів, тонке налаштування конфігів, оптимізація плагінів та ядра під максимальний онлайн.","s4.price":"від 80 грн",
-    "s5.title":"Будівлі на замовлення","s5.desc":"Створюємо унікальні будівлі будь-якої складності: спавни, арени, хаби, міста, замки, острови та цілі світи. Працюємо в будь-якому стилі — середньовіччя, фентезі, sci-fi, сучасність. Здаємо у форматі schematic або готового світу.","s5.price":"від 120 грн",
-    "s6.title":"Карти та світи","s6.desc":"Розробляємо кастомні карти для міні-ігор, пригод та виживання. Генерація terrain, ручне доопрацювання, розміщення структур та оформлення.","s6.price":"від 200 грн",
-    "terminal.comment":"Про студію",
-    "about.badge1":"Гарантія якості","about.badge2":"Швидкі строки","about.badge3":"Підтримка 24/7",
-    "about.founder":"засновник студії",
-    "about.tag":"","about.title":"DIStudio — ваш надійний партнер",
-    "about.desc1":"Ми — команда розробників та білдерів, яка спеціалізується на створенні плагінів, збірок, будівель та карт для Minecraft серверів.",
-    "about.desc2":"З 2021 року допомагаємо власникам серверів втілювати ідеї в життя — швидко, без зайвих слів та з реальним результатом.",
-    "about.li1":"Чітке виконання технічного завдання",
-    "about.li2":"Оптимізований та стабільний код",
-    "about.li3":"Підтримка всіх актуальних версій Minecraft",
-    "about.li4":"Доступні ціни без втрати якості",
-    "about.li5":"Допомога з налаштуванням після здачі замовлення",
-    "about.li6":"Працюємо через безпечну угоду",
-    "about.li7":"Будівлі та карти будь-якої складності та стилю",
-    "about.cta":"Почати співпрацю",
-    "process.tag":"","process.title":"Процес роботи",
-    "step1.title":"Обговорення","step1.desc":"Пишете нам у Discord або Telegram, описуєте ідею. Уточнюємо деталі та складаємо ТЗ.",
-    "step2.title":"Ціна та строки","step2.desc":"Називаємо вартість та дату здачі. Домовляємося про оплату — аванс або постоплата.",
-    "step3.title":"Розробка","step3.desc":"Пишемо плагін за ТЗ. Тримаємо вас у курсі, показуємо проміжний результат.",
-    "step4.title":"Здача","step4.desc":"Передаємо готовий продукт, допомагаємо з установкою та налаштуванням. Правки — безкоштовно.",
-    "portfolio.tag":"","portfolio.title":"Портфоліо","portfolio.desc":"Приклади плагінів, які ми реалізували для клієнтів",
-    "p1.name":"Система кланів та воєн","p1.desc":"Повноцінна кланова система з територіями, війнами, податками та рейтингом. Paper 1.20.4","p1.t1":"Клани",
-    "p2.name":"Аукціон та економіка","p2.desc":"Ігрова економіка з аукціоном, магазином, банком та податковою системою.","p2.t1":"Економіка",
-    "p3.name":"BattlePass система","p3.desc":"Сезонний бойовий пропуск із завданнями, нагородами та красивим GUI інтерфейсом.",
-    "p4.name":"RPG-здібності","p4.desc":"Система класів та вмінь з анімаціями частинок, кулдаунами та балансом для PvP.",
-    "builders.tag":"","builders.title":"Роботи наших білдерів","builders.desc":"Створюємо унікальні будівлі та оформлення для Minecraft серверів",
-    "reviews.tag":"","reviews.title":"Що кажуть клієнти",
-    "r1.text":"Замовляв плагін кланів — зробили швидко, все працює без нарікань. Спілкувалися ввічливо, пояснювали кожен крок. Буду замовляти ще!","r1.role":"Власник Survival-сервера",
-    "r2.text":"Просив доопрацювати чужий плагін — розібралися в чужому коді та додали все що потрібно. Швидко та недорого. Буду постійним клієнтом.","r2.role":"Розробник сервера",
-    "r3.text":"Замовляв BattlePass плагін — отримав набагато більше ніж очікував. GUI просто вогонь, гравці в захваті. Дякую DIStudio!","r3.role":"Засновник SkyBlock мережі",
-    "r4.text":"Хлопці зробили мені економічну систему з нуля. Все задокументовано, config зрозумілий. Підтримка після здачі — теж на рівні!","r4.role":"Технічний директор",
-    "r5.text":"Збірку сервера підняли за два дні — все оптимізовано, TPS стабільний. Ціна дуже адекватна за таку якість.","r5.role":"Адміністратор HiPvP",
-    "r6.text":"Вже третє замовлення в DIStudio. Щоразу все чітко, у строк, без сюрпризів. Це саме ті люди, яким можна довіряти свій сервер.","r6.role":"Постійний клієнт",
-    "cta.title":"Готові посилити\nваш сервер?","cta.sub":"Напишіть нам у Discord або Telegram — розрахуємо ціну безкоштовно.","cta.btn":"⚡ Зв'язатися з нами",
-    "footer.tagline":"Професійна розробка Minecraft плагінів та збірок з 2021 року.",
-    "footer.services":"Послуги","footer.studio":"Студія","footer.socials":"Ми в соцмережах",
-    "footer.copy":"© 2024 DIStudio. Всі права захищені.",
-    "modal.title":"Зв'язатися з нами","modal.desc":"Оберіть зручний спосіб зв'язку — ми відповімо протягом години та обговоримо всі деталі вашого замовлення.",
-    "modal.discord_hint":"Написати на сервер DIStudio","modal.telegram_hint":"Написати в Telegram",
-    "modal.note":"Зазвичай відповідаємо протягом 1 години"
-  },
-  ru: {
-    "nav.services":"Услуги","nav.about":"О нас","nav.portfolio":"Портфолио",
-    "nav.builders":"Билдеры","nav.reviews":"Отзывы","nav.order":"Заказать",
-    "nav.order_icon":"⚡ Заказать",
-    "hero.badge":"Принимаем заказы · 2024",
-    "hero.title":"Разработка","hero.sub":"Создаём мощные плагины и сборки для Minecraft серверов. Быстро, надёжно, по делу.",
-    "hero.btn_order":"⚡ Заказать плагин","hero.btn_portfolio":"📦 Портфолио",
-    "stats.orders":"Выполненных заказов","stats.clients":"Довольных клиентов",
-    "stats.years":"Года опыта","stats.versions":"Версий Minecraft",
-    "services.tag":"","services.title":"Что мы делаем",
-    "services.desc":"Плагины, сборки, постройки и карты для Minecraft серверов — от небольшой правки до полноценного проекта",
-    "service.order":"Заказать →",
-    "s1.title":"Плагин на заказ","s1.desc":"Разрабатываем плагины любой сложности под ваши требования. Оптимизированный код, удобная конфигурация, поддержка версий от 1.8 до 1.21. Реализуем любые механики: мини-игры, экономика, кланы, RPG-системы и многое другое.","s1.price":"от 200 ₽",
-    "s2.title":"Сборка сервера","s2.desc":"Настройка сервера с нуля: выбор ядра, плагины, оптимизация, античит и конфигурация под ваш режим.","s2.price":"от 500 ₽",
-    "s3.title":"Доработка плагина","s3.desc":"Исправим баги, добавим функции, обновим под новую версию — работаем с любым чужим кодом.","s3.price":"от 100 ₽",
-    "s4.title":"Оптимизация сервера","s4.desc":"Анализ TPS и лагов, тонкая настройка конфигов, оптимизация плагинов и ядра под максимальный онлайн.","s4.price":"от 200 ₽",
-    "s5.title":"Постройки на заказ","s5.desc":"Создаём уникальные постройки любой сложности: спавны, арены, хабы, города, замки, острова и целые миры. Работаем в любом стиле — средневековье, фэнтези, sci-fi, современность. Сдаём в формате schematic или готового мира.","s5.price":"от 300 ₽",
-    "s6.title":"Карты и миры","s6.desc":"Разрабатываем кастомные карты для мини-игр, приключений и выживания. Генерация terrain, ручная доработка, расстановка структур и оформление.","s6.price":"от 500 ₽",
-    "terminal.comment":"О студии",
-    "about.badge1":"Гарантия качества","about.badge2":"Быстрые сроки","about.badge3":"Поддержка 24/7",
-    "about.founder":"основатель студии",
-    "about.tag":"","about.title":"DIStudio — ваш надёжный партнёр",
-    "about.desc1":"Мы — команда разработчиков и билдеров, которая специализируется на создании плагинов, сборок, построек и карт для Minecraft серверов.",
-    "about.desc2":"С 2021 года помогаем владельцам серверов воплощать идеи в жизнь — быстро, без лишних слов и с реальным результатом.",
-    "about.li1":"Чёткое выполнение технического задания",
-    "about.li2":"Оптимизированный и стабильный код",
-    "about.li3":"Поддержка всех актуальных версий Minecraft",
-    "about.li4":"Доступные цены без потери качества",
-    "about.li5":"Помощь с настройкой после сдачи заказа",
-    "about.li6":"Работаем через безопасную сделку",
-    "about.li7":"Постройки и карты любой сложности и стиля",
-    "about.cta":"Начать сотрудничество",
-    "process.tag":"","process.title":"Процесс работы",
-    "step1.title":"Обсуждение","step1.desc":"Пишете нам в Discord или Telegram, описываете идею. Уточняем детали и составляем ТЗ.",
-    "step2.title":"Цена и сроки","step2.desc":"Называем стоимость и дату сдачи. Договариваемся об оплате — аванс или постоплата.",
-    "step3.title":"Разработка","step3.desc":"Пишем плагин по ТЗ. Держим вас в курсе, показываем промежуточный результат.",
-    "step4.title":"Сдача","step4.desc":"Передаём готовый продукт, помогаем с установкой и настройкой. Правки — бесплатно.",
-    "portfolio.tag":"","portfolio.title":"Портфолио","portfolio.desc":"Примеры плагинов, которые мы реализовали для клиентов",
-    "p1.name":"Система кланов и войн","p1.desc":"Полноценная клановая система с территориями, войнами, налогами и рейтингом. Paper 1.20.4","p1.t1":"Кланы",
-    "p2.name":"Аукцион и экономика","p2.desc":"Игровая экономика с аукционом, магазином, банком и налоговой системой.","p2.t1":"Экономика",
-    "p3.name":"BattlePass система","p3.desc":"Сезонный боевой пропуск с заданиями, наградами и красивым GUI интерфейсом.",
-    "p4.name":"RPG-способности","p4.desc":"Система классов и умений с анимациями частиц, кулдаунами и балансом для PvP.",
-    "builders.tag":"","builders.title":"Работы наших билдеров","builders.desc":"Создаём уникальные постройки и оформление для Minecraft серверов",
-    "reviews.tag":"","reviews.title":"Что говорят клиенты",
-    "r1.text":"Заказывал плагин кланов — сделали быстро, всё работает без нареканий. Общались вежливо, объясняли каждый шаг. Буду обращаться ещё!","r1.role":"Владелец Survival-сервера",
-    "r2.text":"Просил доработать чужой плагин — разобрались в чужом коде и добавили всё что нужно. Быстро и недорого. Буду постоянным клиентом.","r2.role":"Разработчик сервера",
-    "r3.text":"Заказывал BattlePass плагин — получил намного больше чем ожидал. GUI просто огонь, игроки в восторге. Спасибо DIStudio!","r3.role":"Основатель SkyBlock сети",
-    "r4.text":"Ребята сделали мне экономическую систему с нуля. Всё задокументировано, config понятный. Поддержка после сдачи — тоже на уровне!","r4.role":"Технический директор",
-    "r5.text":"Сборку сервера подняли за два дня — всё оптимизировано, TPS стабильный. Цена очень адекватная за такое качество.","r5.role":"Администратор HiPvP",
-    "r6.text":"Уже третий заказ в DIStudio. Каждый раз всё чётко, в срок, без сюрпризов. Это именно те люди, которым можно доверять свой сервер.","r6.role":"Постоянный клиент",
-    "cta.title":"Готовы усилить\nваш сервер?","cta.sub":"Напишите нам в Discord или Telegram — рассчитаем цену бесплатно.","cta.btn":"⚡ Связаться с нами",
-    "footer.tagline":"Профессиональная разработка Minecraft плагинов и сборок с 2021 года.",
-    "footer.services":"Услуги","footer.studio":"Студия","footer.socials":"Мы в соцсетях",
-    "footer.copy":"© 2024 DIStudio. Все права защищены.",
-    "modal.title":"Связаться с нами","modal.desc":"Выберите удобный способ связи — мы ответим в течение часа и обсудим все детали вашего заказа.",
-    "modal.discord_hint":"Написать на сервер DIStudio","modal.telegram_hint":"Написать в Telegram",
-    "modal.note":"Обычно отвечаем в течение 1 часа"
-  }
-};
-
-let currentLang = localStorage.getItem('di_lang') || 'en';
-
-function setLang(lang) {
-  currentLang = lang;
-  localStorage.setItem('di_lang', lang);
-  document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
-  });
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (i18n[lang] && i18n[lang][key] !== undefined) {
-      el.textContent = i18n[lang][key];
-    }
-  });
-  document.documentElement.lang = lang === 'ua' ? 'uk' : lang;
-}
 (function(){
   const c=document.getElementById('particles'),cols=['#00ff88','#00d4ff','#ffaa00','#00ff88','#00ff88'];
   for(let i=0;i<40;i++){const p=document.createElement('div');p.className='particle';p.style.cssText=`left:${Math.random()*100}%;width:${Math.random()>.5?3:6}px;height:${Math.random()>.5?3:6}px;background:${cols[Math.floor(Math.random()*cols.length)]};animation-duration:${8+Math.random()*16}s;animation-delay:${-Math.random()*20}s;`;c.appendChild(p);}
 })();
-
 (function(){
   const grid=document.getElementById('heroGrid');if(!grid)return;
   const cols=['#3dffa0','#1a4a30','#0c2018','#00d4ff','#1a3a50','#0a1a28','#ffaa00','#3a2a00','#080b0e','transparent'];
@@ -886,11 +707,6 @@ function setLang(lang) {
 })();
 const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*80);});},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-function openModal(){document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';}
-function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';}
-function closeModalOutside(e){if(e.target===document.getElementById('modal'))closeModal();}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeMenu();}});
 
 function toggleMenu(){
   const b=document.getElementById('burger'),m=document.getElementById('mobileMenu');
@@ -902,8 +718,126 @@ function closeMenu(){
   document.getElementById('mobileMenu').classList.remove('open');
   document.body.style.overflow='';
 }
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
 
-setLang(currentLang);
+const TG_TOKEN = '8816411716:AAEkRQ8JPGvnmqo20k8ulBC5FBCmey78olk';
+const TG_CHAT_ID = '-1003959926970';
+
+function submitOrder(e) {
+  e.preventDefault();
+  const btn = document.getElementById('orderBtn');
+  const msgEl = document.getElementById('orderMsg');
+  const msgText = document.getElementById('orderMsgText');
+  const name = document.getElementById('orderName').value.trim();
+  const service = document.getElementById('orderService').value;
+  const desc = document.getElementById('orderDesc').value.trim();
+  const contact = document.getElementById('orderContact').value.trim();
+  if (!name || !service || !desc || !contact) return;
+  btn.disabled = true;
+  btn.textContent = i18n[currentLang]['order.sending'];
+  msgEl.className = 'order-msg';
+  const datetime = new Date().toLocaleString('ru-RU', {timeZone:'Europe/Kiev'});
+  const text = `🆕 <b>Новый заказ с сайта!</b>\n\n👤 <b>Имя:</b> ${esc(name)}\n📋 <b>Услуга:</b> ${esc(service)}\n💬 <b>Детали:</b> ${esc(desc)}\n📞 <b>Контакт:</b> ${esc(contact)}\n🕐 <b>Время:</b> ${datetime}`;
+  fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`,{
+    method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({chat_id:TG_CHAT_ID,text,parse_mode:'HTML'})
+  })
+  .then(r=>{if(!r.ok)throw new Error();return r.json();})
+  .then(d=>{
+    if(d.ok){
+      msgEl.className='order-msg success';
+      msgText.textContent=i18n[currentLang]['order.success'];
+      document.getElementById('orderForm').reset();
+    } else throw new Error();
+  })
+  .catch(()=>{
+    msgEl.className='order-msg error';
+    msgText.textContent=i18n[currentLang]['order.error'];
+  })
+  .finally(()=>{
+    btn.disabled=false;
+    btn.textContent=i18n[currentLang]['order.submit'];
+  });
+}
+
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+
+let currentLang = localStorage.getItem('distudio-lang') || 'ru';
+
+const i18n = {
+  ru:{
+    'nav.services':'Услуги','nav.about':'О нас','nav.portfolio':'Портфолио',
+    'nav.builders':'Билдеры','nav.reviews':'Отзывы','nav.order':'Заказать',
+    'order.tag':'оставить заявку','order.title':'Оформить заказ',
+    'order.desc':'Заполните форму ниже и мы свяжемся с вами в ближайшее время',
+    'order.label_name':'Имя','order.label_service':'Услуга',
+    'order.label_desc':'Описание проекта','order.label_contact':'Контакт',
+    'order.ph_name':'Ваше имя','order.ph_desc':'Опишите ваш проект',
+    'order.ph_contact':'Ваш Telegram или Discord',
+    'order.select_default':'Выберите услугу',
+    'order.opt_plugin':'Плагин на заказ','order.opt_server':'Сборка сервера',
+    'order.opt_fix':'Доработка плагина','order.opt_optimize':'Оптимизация сервера',
+    'order.opt_building':'Постройки на заказ','order.opt_maps':'Карты и миры',
+    'order.opt_other':'Другое','order.submit':'Отправить заказ',
+    'order.sending':'Отправляем...','order.success':'Заказ отправлен! Скоро свяжемся',
+    'order.error':'Что-то пошло не так — напишите нам напрямую'
+  },
+  ua:{
+    'nav.services':'Послуги','nav.about':'Про нас','nav.portfolio':'Портфоліо',
+    'nav.builders':'Білдери','nav.reviews':'Відгуки','nav.order':'Замовити',
+    'order.tag':'залишити заявку','order.title':'Оформити замовлення',
+    'order.desc':'Заповніть форму нижче і ми зв\'яжемося з вами найближчим часом',
+    'order.label_name':'Ім\'я','order.label_service':'Послуга',
+    'order.label_desc':'Опис проєкту','order.label_contact':'Контакт',
+    'order.ph_name':'Ваше ім\'я','order.ph_desc':'Опишіть ваш проєкт',
+    'order.ph_contact':'Ваш Telegram або Discord',
+    'order.select_default':'Оберіть послугу',
+    'order.opt_plugin':'Плагін на замовлення','order.opt_server':'Збірка сервера',
+    'order.opt_fix':'Доопрацювання плагіна','order.opt_optimize':'Оптимізація сервера',
+    'order.opt_building':'Побудови на замовлення','order.opt_maps':'Карти та світи',
+    'order.opt_other':'Інше','order.submit':'Надіслати замовлення',
+    'order.sending':'Надсилаємо...','order.success':'Замовлення надіслано! Незабаром зв\'яжемося',
+    'order.error':'Щось пішло не так — напишіть нам напряму'
+  },
+  en:{
+    'nav.services':'Services','nav.about':'About','nav.portfolio':'Portfolio',
+    'nav.builders':'Builders','nav.reviews':'Reviews','nav.order':'Order',
+    'order.tag':'place an order','order.title':'Place an Order',
+    'order.desc':'Fill out the form below and we will contact you shortly',
+    'order.label_name':'Name','order.label_service':'Service',
+    'order.label_desc':'Project Description','order.label_contact':'Contact',
+    'order.ph_name':'Your name','order.ph_desc':'Describe your project',
+    'order.ph_contact':'Your Telegram or Discord',
+    'order.select_default':'Select a service',
+    'order.opt_plugin':'Custom Plugin','order.opt_server':'Server Build',
+    'order.opt_fix':'Plugin Modification','order.opt_optimize':'Server Optimization',
+    'order.opt_building':'Custom Building','order.opt_maps':'Maps & Worlds',
+    'order.opt_other':'Other','order.submit':'Send Order',
+    'order.sending':'Sending...','order.success':'Order sent! We will contact you soon',
+    'order.error':'Something went wrong — please write to us directly'
+  }
+};
+
+function setLang(lang){
+  currentLang=lang;
+  localStorage.setItem('distudio-lang',lang);
+  document.querySelectorAll('.lang-btn').forEach(btn=>{
+    btn.classList.toggle('active',btn.textContent.trim().toLowerCase()===lang);
+  });
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.getAttribute('data-i18n');
+    if(i18n[lang]&&i18n[lang][key])el.textContent=i18n[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el=>{
+    const key=el.getAttribute('data-i18n-placeholder');
+    if(i18n[lang]&&i18n[lang][key])el.placeholder=i18n[lang][key];
+  });
+}
+
+(function(){
+  const saved=localStorage.getItem('distudio-lang')||'ru';
+  setLang(saved);
+})();
 </script>
 </body>
 </html>
