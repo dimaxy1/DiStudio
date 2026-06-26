@@ -26,7 +26,6 @@
 
 <body>
 
-    <!-- ====== HEADER ====== -->
     <header>
         <div class="nav-container" id="navContainer">
             <div class="nav-top-row">
@@ -77,7 +76,6 @@
         </div>
     </header>
 
-    <!-- ====== HERO ====== -->
     <section id="hero" class="hero">
         <div class="container">
             <div class="hero-content">
@@ -101,7 +99,6 @@
         </div>
     </section>
 
-    <!-- ====== STATS ====== -->
     <div class="stats-panel">
         <div class="stats-panel-inner">
             <div class="stats-panel-item">
@@ -143,7 +140,6 @@
         </div>
     </div>
 
-    <!-- ====== SERVICES ====== -->
     <section id="services" class="section highlights-section">
         <div class="container">
             <h2 class="section-title" data-i18n="services.title">Наши услуги</h2>
@@ -241,7 +237,6 @@
         </div>
     </section>
 
-    <!-- ====== PORTFOLIO PREVIEW ====== -->
     <section id="portfolio" class="section">
         <div class="container">
             <h2 class="section-title">Портфолио</h2>
@@ -276,7 +271,6 @@
         </div>
     </section>
 
-    <!-- ====== PROCESS ====== -->
     <section id="process" class="section">
         <div class="container">
             <h2 class="section-title" data-i18n="process.title">Как мы работаем</h2>
@@ -307,7 +301,6 @@
         </div>
     </section>
 
-    <!-- ====== REVIEWS ====== -->
     <section id="reviews" class="section">
         <div class="container">
             <h2 class="section-title" data-i18n="reviews.title">Отзывы клиентов</h2>
@@ -389,7 +382,6 @@
         </div>
     </section>
 
-    <!-- ====== FAQ ====== -->
     <section id="faq" class="section faq-section">
         <div class="container">
             <h2 class="section-title" data-i18n="faq.title">Часто задаваемые вопросы</h2>
@@ -447,7 +439,6 @@
         </div>
     </section>
 
-    <!-- ====== CTA ====== -->
     <section class="cta-section">
         <div class="container">
             <h2 class="cta-title" data-i18n="cta.title">Готовы усилить ваш сервер?</h2>
@@ -468,7 +459,6 @@
         </div>
     </section>
 
-    <!-- ====== ORDER FORM ====== -->
     <section id="order-form" class="section order-section">
         <div class="container">
             <h2 class="section-title" data-i18n="order.title">Оформить заказ</h2>
@@ -508,7 +498,6 @@
         </div>
     </section>
 
-    <!-- ====== FOOTER ====== -->
     <footer>
         <div class="footer-gradient-overlay"></div>
         <div class="container footer-content">
@@ -555,7 +544,6 @@
     </footer>
 
     <script>
-    // ======= FAQ =======
     document.querySelectorAll('.faq-question').forEach(q => {
         q.addEventListener('click', () => {
             const item = q.closest('.faq-item');
@@ -565,7 +553,6 @@
         });
     });
 
-    // ======= MOBILE MENU =======
     const toggle = document.getElementById('menu-toggle');
     const navContainer = document.getElementById('navContainer');
     const navMenu = document.getElementById('navMenu');
@@ -584,7 +571,6 @@
         });
     });
 
-    // ======= SCROLL REVEAL =======
     const obs = new IntersectionObserver(entries => {
         entries.forEach((e, i) => {
             if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 80);
@@ -592,7 +578,6 @@
     }, { threshold: 0.1 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    // ======= TELEGRAM ORDER FORM =======
     const TG_TOKEN = '8816411716:AAEkRQ8JPGvnmqo20k8ulBC5FBCmey78olk';
     const TG_CHAT_ID = '-1003959926970';
 
@@ -643,7 +628,6 @@
         });
     }
 
-    // ======= I18N =======
     let currentLang = localStorage.getItem('distudio-lang') || 'ru';
 
     const i18n = {
