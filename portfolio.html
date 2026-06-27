@@ -40,6 +40,8 @@
             max-width: 520px;
             margin: 0 auto;
         }
+
+        /* ── Tabs ── */
         .tabs-wrap {
             display: flex;
             justify-content: center;
@@ -83,8 +85,10 @@
             font-size: 12px;
             font-weight: 700;
         }
+
         .tab-panel { display: none; }
         .tab-panel.active { display: block; }
+
         .filter-bar {
             display: flex;
             gap: 8px;
@@ -109,6 +113,7 @@
             border-color: var(--accent);
             color: var(--accent);
         }
+
         .plugins-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -177,6 +182,7 @@
             gap: 8px;
         }
         .plugin-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+
         .builders-masonry {
             columns: 3;
             column-gap: 16px;
@@ -199,18 +205,19 @@
         }
         .builder-thumb {
             width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 72px;
-            position: relative;
+            aspect-ratio: 4/3;
             overflow: hidden;
+            display: block;
+            background: linear-gradient(135deg, #141a24, #1a2235);
         }
         .builder-thumb img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
         }
+        .builder-item:hover .builder-thumb img { transform: scale(1.05); }
         .builder-overlay {
             position: absolute;
             inset: 0;
@@ -238,7 +245,6 @@
             margin-bottom: 32px;
         }
 
-        /* ── Back link ── */
         .back-link {
             display: inline-flex;
             align-items: center;
@@ -251,7 +257,6 @@
         }
         .back-link:hover { color: var(--accent); }
 
-        /* ── Lightbox ── */
         .lightbox {
             position: fixed;
             inset: 0;
@@ -299,10 +304,20 @@
             .builders-masonry { columns: 2; }
         }
         @media (max-width: 600px) {
+            .portfolio-page-hero { padding: 110px 0 40px; }
+            .portfolio-page-hero h1 { font-size: 28px; }
             .plugins-grid { grid-template-columns: 1fr; }
             .plugin-card.featured { grid-column: span 1; }
             .builders-masonry { columns: 1; }
-            .tab-btn { padding: 10px 16px; font-size: 13px; }
+            .tabs { flex-direction: column; width: 100%; }
+            .tab-btn { width: 100%; justify-content: center; padding: 12px 16px; font-size: 14px; }
+            .tabs-wrap { padding: 0 4px; }
+            .filter-bar { gap: 6px; }
+            .filter-btn { padding: 6px 14px; font-size: 12px; }
+            .plugin-body { padding: 16px; }
+            .portfolio-cta { padding: 50px 0 70px; }
+            .portfolio-cta h2 { font-size: 24px; }
+            .order-input, .order-textarea, .order-select { font-size: 16px; }
         }
     </style>
 </head>
@@ -314,7 +329,7 @@
             <a href="index.html" class="logo">
                 <img src="ava.jpg" alt="DIStudio" class="logo-img">
             </a>
-            <nav class="nav-menu">
+            <nav class="nav-menu" id="navMenu">
                 <a href="index.html#services" class="nav-link">
                     <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 2h6v2H9V2zm6 4V4h2v2h4v16H3V6h4V4h2v2h6zm0 2H9v2H7V8H5v12h14V8h-2v2h-2V8z" fill="currentColor"/></svg>
                     <span>Услуги</span>
@@ -323,7 +338,7 @@
                     <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8 2h12v20H4V2h4zm4 8h-2v2H8V4H6v16h12V4h-4v8h-2v-2z" fill="currentColor"/></svg>
                     <span>Портфолио</span>
                 </a>
-                <a href="index.html#reviews" class="nav-link">
+                <a href="reviews.html" class="nav-link">
                     <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 1H1v18h18V1H3zm14 2v14H3V3h14zm4 18H5v2h18V5h-2v16zM15 5H5v2h10V5zM5 9h10v2H5V9zm7 4H5v2h7v-2z" fill="currentColor"/></svg>
                     <span>Отзывы</span>
                 </a>
@@ -337,6 +352,11 @@
                     <svg fill="currentColor" viewBox="0 0 24 24" width="16" height="16"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
                     Заказать
                 </a>
+                <div class="menu-toggle" id="menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </div>
     </div>
@@ -520,7 +540,17 @@
 </div>
 
 <script>
-    
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.getElementById('navContainer');
+    toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active');
+        nav.classList.toggle('menu-open');
+    });
+    document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => {
+        toggle.classList.remove('active');
+        nav.classList.remove('menu-open');
+    }));
+
     function switchTab(name, btn) {
         document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
