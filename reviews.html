@@ -52,7 +52,6 @@
         }
         .back-link:hover { color: var(--accent); }
 
-        /* Stats row */
         .reviews-stats {
             display: flex;
             justify-content: center;
@@ -75,7 +74,6 @@
             font-weight: 500;
         }
 
-        /* Grid */
         .reviews-full-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -154,7 +152,6 @@
             margin-bottom: 2px;
         }
 
-        /* CTA */
         .reviews-cta {
             text-align: center;
             padding: 60px 0 100px;
@@ -178,7 +175,6 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
     <div class="nav-container" id="navContainer">
         <div class="nav-top-row">
@@ -216,7 +212,6 @@
     </div>
 </header>
 
-<!-- HERO -->
 <div class="reviews-page-hero">
     <div class="container">
         <a href="index.html" class="back-link">
@@ -232,7 +227,6 @@
 </div>
 
 <div class="container">
-    <!-- STATS -->
     <div class="reviews-stats">
         <div class="rs-item">
             <div class="rs-num">200<span>+</span></div>
@@ -252,7 +246,6 @@
         </div>
     </div>
 
-    <!-- REVIEWS GRID -->
     <div class="reviews-full-grid">
 
         <div class="review-card featured reveal">
@@ -375,7 +368,6 @@
     </div>
 </div>
 
-<!-- CTA -->
 <div class="reviews-cta">
     <div class="container">
         <h2>Хотите оказаться здесь?</h2>
@@ -385,7 +377,6 @@
 </div>
 
 <script>
-    // Burger menu
     const toggle = document.getElementById('menu-toggle');
     const nav = document.getElementById('navContainer');
     toggle.addEventListener('click', () => {
@@ -397,7 +388,6 @@
         nav.classList.remove('menu-open');
     }));
 
-    // Reveal on scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(e => {
             if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
